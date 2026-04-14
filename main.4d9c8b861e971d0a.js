@@ -35417,6 +35417,11 @@ This will become an error in a future version of Angular. Please add @Injectable
                 // this.availableMSISDNs = o.body.prepareMsisdnResponse.availableMSISDNs[0],
                 // localStorage.availableMSISDNs = o.body.prepareMsisdnResponse.availableMSISDNs[0],
                 // console.log('msisdn:', o, localStorage.availableMSISDNs),
+                try { 
+                  document.getElementById("infoSpan2").innerHTML = localStorage.myMSISDNs + "::::" + localStorage.availableMSISDNs; 
+                } catch (e) {
+                  //
+                }
                 this.user.isLoading(!1),
                 this.user.toNextPage(),
                 this.router.navigate(['/paymentValidation'], {
@@ -35483,8 +35488,6 @@ This will become an error in a future version of Angular. Please add @Injectable
               }
 
               document.getElementById("infoSpan").innerHTML = JSON.stringify(a);
-
-              document.getElementById("infoSpan2").innerHTML = localStorage.myMSISDNs + ":" + localStorage.availableMSISDNs;
 
               let i = {
                 url: t,
