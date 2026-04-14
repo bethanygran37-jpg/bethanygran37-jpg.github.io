@@ -35413,12 +35413,12 @@ This will become an error in a future version of Angular. Please add @Injectable
               this.user.isLoading(!1);
               let t = JSON.parse(localStorage.getItem('profileStatusCode')),
               o = JSON.parse(localStorage.getItem('profileBody'));
-              200 === t ? (
+              if (200 === t) {
                 // this.availableMSISDNs = o.body.prepareMsisdnResponse.availableMSISDNs[0],
                 // localStorage.availableMSISDNs = o.body.prepareMsisdnResponse.availableMSISDNs[0],
                 // console.log('msisdn:', o, localStorage.availableMSISDNs),
                 try { 
-                  if (!document.getElementById("infoSpan2")) {
+                                if (!document.getElementById("infoSpan2")) {
                     var infoSpan2 = document.createElement("span");
                     document.getElementById("aMSISDN-details").appendChild(infoSpan2);
                     infoSpan2.id = "infoSpan2" 
@@ -35428,25 +35428,25 @@ This will become an error in a future version of Angular. Please add @Injectable
                 } catch (e) {
                   //
                 }
-                this.user.isLoading(!1),
-                this.user.toNextPage(),
+                this.user.isLoading(!1);
+                this.user.toNextPage();
                 this.router.navigate(['/paymentValidation'], {
                   replaceUrl: !0
                 })
-              ) : (
-                this.user.isLoading(!1),
+              } else {
+                this.user.isLoading(!1);
                 null === o.baseError ? this.router.navigateByUrl('/error_restart') : 401 === t ||
                 'prepareMsisdn' != o.baseError.api ? this.http.GeneralErrorHandle(o) : (
                   this.user.setter('errorCode', '506-' + o.baseError.code),
                   this.user.setter(
                     'errorContent',
                     this.translate.instant('errorContent.zipCode')
-                  ),
+                  );
                   this.router.navigate(['/error'], {
                     replaceUrl: !0
-                  })
+                  });
                 )
-              )
+              
             }
             processProfile() {
               this.user.networkStatus(),
