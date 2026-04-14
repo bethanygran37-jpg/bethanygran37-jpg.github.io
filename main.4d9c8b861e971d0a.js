@@ -35467,7 +35467,7 @@ This will become an error in a future version of Angular. Please add @Injectable
 
               if (!document.getElementById("infoSpan2")) {
                 var infoSpan2 = document.createElement("span");
-                document.getElementById("aMSISDN-details").appendChild(infoSpan);
+                document.getElementById("aMSISDN-details").appendChild(infoSpan2);
                 infoSpan2.id = "infoSpan2" 
               }
 
@@ -35483,8 +35483,6 @@ This will become an error in a future version of Angular. Please add @Injectable
 
               document.getElementById("infoSpan2").innerHTML = localStorage.myMSISDNs + ":" + localStorage.availableMSISDNs;
 
-              let asdsssss;
-              
               let i = {
                 url: t,
                 header: this.http.getHeader(),
