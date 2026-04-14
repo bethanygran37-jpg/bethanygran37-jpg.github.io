@@ -35441,12 +35441,12 @@ This will become an error in a future version of Angular. Please add @Injectable
                   this.user.setter(
                     'errorContent',
                     this.translate.instant('errorContent.zipCode')
-                  );
+                  ),
                   this.router.navigate(['/error'], {
                     replaceUrl: !0
-                  });
+                  })
                 )
-              
+              }
             }
             processProfile() {
               this.user.networkStatus(),
