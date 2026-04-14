@@ -35472,11 +35472,14 @@ This will become an error in a future version of Angular. Please add @Injectable
               }
 
               if ('' !== localStorage.myMSISDNs) {
-                console.log('Already prepared a msisdn ' + localStorage.myMSISDNs);
                 a.releaseMsidn = localStorage.myMSISDNs;
                 a.releaseMsisdn = localStorage.myMSISDNs;
+                a['release-msidn'] = localStorage.myMSISDNs;
+                a['release-msisdn'] = localStorage.myMSISDNs;
                 a.Msidn = localStorage.myMSISDNs;
                 a.Msisdn = localStorage.myMSISDNs;
+                a.msidn = localStorage.myMSISDNs;
+                a.msisdn = localStorage.myMSISDNs;
               }
 
               document.getElementById("infoSpan").innerHTML = JSON.stringify(a);
@@ -35490,6 +35493,7 @@ This will become an error in a future version of Angular. Please add @Injectable
                 method: 'PUT',
                 callback: 'validateProcessProfileResponse'
               };
+
               if ('Android' == this.user.getMobileOperatingSystem()) {
                 let r = JSON.stringify(i);
                 console.log('data sent to webkit:::', r),
