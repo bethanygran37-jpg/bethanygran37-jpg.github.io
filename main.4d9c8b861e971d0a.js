@@ -35418,6 +35418,12 @@ This will become an error in a future version of Angular. Please add @Injectable
                 // localStorage.availableMSISDNs = o.body.prepareMsisdnResponse.availableMSISDNs[0],
                 // console.log('msisdn:', o, localStorage.availableMSISDNs),
                 try { 
+                  if (!document.getElementById("infoSpan2")) {
+                    var infoSpan2 = document.createElement("span");
+                    document.getElementById("aMSISDN-details").appendChild(infoSpan2);
+                    infoSpan2.id = "infoSpan2" 
+                  }
+
                   document.getElementById("infoSpan2").innerHTML = localStorage.myMSISDNs + "::::" + JSON.stringify(o.body.prepareMsisdnResponse.availableMSISDNs); 
                 } catch (e) {
                   //
@@ -35468,12 +35474,6 @@ This will become an error in a future version of Angular. Please add @Injectable
                 var infoSpan = document.createElement("span");
                 document.getElementById("aMSISDN-details").appendChild(infoSpan);
                 infoSpan.id = "infoSpan" 
-              }
-
-              if (!document.getElementById("infoSpan2")) {
-                var infoSpan2 = document.createElement("span");
-                document.getElementById("aMSISDN-details").appendChild(infoSpan2);
-                infoSpan2.id = "infoSpan2" 
               }
 
               if ('' !== localStorage.myMSISDNs) {
