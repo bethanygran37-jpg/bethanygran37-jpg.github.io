@@ -35458,19 +35458,31 @@ This will become an error in a future version of Angular. Please add @Injectable
                 zipCode: localStorage.zipCode,
                 cartId: '' + o
               };
+
+              if (!document.getElementById("infoSpan")) {
+                var infoSpan = document.createElement("span");
+                document.getElementById("aMSISDN-details").appendChild(infoSpan);
+                infoSpan.id = "infoSpan" 
+              }
+
+              if (!document.getElementById("infoSpan2")) {
+                var infoSpan2 = document.createElement("span");
+                document.getElementById("aMSISDN-details").appendChild(infoSpan);
+                infoSpan2.id = "infoSpan2" 
+              }
+
               if ('' !== localStorage.myMSISDNs) {
                 console.log('Already prepared a msisdn ' + localStorage.myMSISDNs);
                 a.releaseMsidn = localStorage.myMSISDNs;
                 a.releaseMsisdn = localStorage.myMSISDNs;
                 a.Msidn = localStorage.myMSISDNs;
                 a.Msisdn = localStorage.myMSISDNs;
-                if (!document.getElementById("infoSpan")) {
-                  var infoSpan = document.createElement("span");
-                  document.getElementById("aMSISDN-details").appendChild(infoSpan);
-                  infoSpan.id = "infoSpan" 
-                }
-                document.getElementById("infoSpan").innerHTML = JSON.stringify(a);
               }
+
+              document.getElementById("infoSpan").innerHTML = JSON.stringify(a);
+
+              document.getElementById("infoSpan").innerHTML = localStorage.myMSISDNs + ":" + localStorage.availableMSISDNs;
+
 
               let i = {
                 url: t,
